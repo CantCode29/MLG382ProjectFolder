@@ -20,6 +20,7 @@ categorical_features = ['Gender', 'Ethnicity', 'ParentalEducation', 'ParentalSup
 numerical_features = ['Age', 'StudyTimeWeekly', 'Absences', 'GPA']
 
 app = dash.Dash(__name__)
+server = app.server
 
 app.layout = html.Div([
     html.H1("Student Grade Prediction (Random Forest)"),
