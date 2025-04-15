@@ -3,10 +3,10 @@ from dash import dcc, html
 from dash.dependencies import Input, Output, State
 import pandas as pd
 import numpy as np
-import joblib  # For loading the .pkl model
+import joblib  
 import os
 
-# --- 1. Load the Trained Random Forest Model ---
+
 model_path = os.path.join(os.getcwd(), 'Artifacts', 'random_forest_model.pkl')
 try:
     model = joblib.load(model_path)
@@ -15,9 +15,6 @@ except Exception as e:
     print(f"Error loading model: {e}")
     model = None
 
-# --- 2. Define Categorical and Numerical Features (Crucial for consistent preprocessing) ---
-categorical_features = ['Gender', 'Ethnicity', 'ParentalEducation', 'ParentalSupport', 'Extracurricular', 'Sports', 'Music', 'Volunteering', 'Tutoring']
-numerical_features = ['Age', 'StudyTimeWeekly', 'Absences', 'GPA']
 
 app = dash.Dash(__name__)
 server = app.server
@@ -25,7 +22,7 @@ server = app.server
 app.layout = html.Div([
     html.H1("Student Grade Prediction (Random Forest)"),
 
-    # --- Input Fields (Same as before) ---
+   ##Input fields
     html.Div([
         html.Label("Age"),
         dcc.Input(id='age-input', type='number', value=16),
@@ -105,7 +102,7 @@ def predict_grade(n_clicks, age, gender, ethnicity, parental_education, study_ti
     if n_clicks == 0:
         return ""
 
-    # --- 4. Create Input Data as a DataFrame ---
+   
     input_data = pd.DataFrame({
         'Age': [age],
         'Gender': [gender],
@@ -122,10 +119,10 @@ def predict_grade(n_clicks, age, gender, ethnicity, parental_education, study_ti
         'GPA': [gpa]
     })
 
-    # --- 5. Make Prediction ---
+  
     prediction = model.predict(input_data)[0]  # Get the single prediction
 
-    # --- 6.  Map Class to Grade (A, B, C, D, F) ---
+    
     grade_mapping = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'F'}
     predicted_grade = grade_mapping.get(prediction, 'Unknown')
 
