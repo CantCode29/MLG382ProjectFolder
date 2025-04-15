@@ -47,5 +47,5 @@ tzdata==2025.2
 wcwidth==0.2.13
 dash==2.17.0
 gunicorn
-dash-bootstrap-components
+dash-bootstrap-componentsS
 gevent

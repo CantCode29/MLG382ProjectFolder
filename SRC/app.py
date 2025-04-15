@@ -4,9 +4,16 @@ from dash.dependencies import Input, Output, State
 import pandas as pd
 import numpy as np
 import joblib  # For loading the .pkl model
+import os
 
 # --- 1. Load the Trained Random Forest Model ---
-model = joblib.load(r"C:\Users\thape\OneDrive\Documents\School\MLG382\MLG382ProjectFolder\Artifacts\random_forest_model.pkl")
+model_path = os.path.join(os.getcwd(), 'Artifacts', 'random_forest_model.pkl')
+try:
+    model = joblib.load(model_path)
+    print(f"Model loaded successfully from: {model_path}")
+except Exception as e:
+    print(f"Error loading model: {e}")
+    model = None
 
 # --- 2. Define Categorical and Numerical Features (Crucial for consistent preprocessing) ---
 categorical_features = ['Gender', 'Ethnicity', 'ParentalEducation', 'ParentalSupport', 'Extracurricular', 'Sports', 'Music', 'Volunteering', 'Tutoring']
