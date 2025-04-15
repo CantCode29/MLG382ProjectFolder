@@ -48,3 +48,4 @@ wcwidth==0.2.13
 dash==2.17.0
 gunicorn
 dash-bootstrap-components>=1.4.0
+gevent
