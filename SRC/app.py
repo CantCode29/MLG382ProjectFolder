@@ -5,6 +5,8 @@ import pandas as pd
 import numpy as np
 import joblib  
 import os
+from sklearn.preprocessing import StandardScaler,OrdinalEncoder
+from sklearn.preprocessing import OneHotEncoder
 
 
 model_path = os.path.join(os.getcwd(), 'Artifacts', 'random_forest_model.pkl')
@@ -98,6 +100,34 @@ app.layout = html.Div([
      State('volunteering-input', 'value'),
      State('gpa-input', 'value')]
 )
+
+def featureEng(inputData):
+    df = inputData
+    numeric_features =['Age',
+    'StudyTimeWeekly',
+    'Absences',
+    ]
+    ## scaling numeric features
+    scaler = StandardScaler()
+    df[numeric_features] = scaler.fit_transform(df[numeric_features]) 
+
+    ## scaling categorical features
+    ohe = OneHotEncoder(sparse_output=False, drop='first')
+    ordinal_encoder_Parent = OrdinalEncoder(categories=[[0,1,2,3,4]])
+    ordinal_encoder_ParentalSup = OrdinalEncoder(categories=[[0,1,2,3,4]])
+
+    ethnicity_encoded = ohe.fit_transform(df[['Ethnicity']])
+    ethnicity_df = pd.DataFrame(ethnicity_encoded, columns=[f'Ethnicity_{cat}' for cat in ohe.categories_[0][1:]]) ## this is nominal so we split up each category into their own binary columns
+    df = pd.concat([df, ethnicity_df], axis=1)
+    df.drop('Ethnicity', axis=1, inplace=True)
+
+    # Fit and transform 'ParentalEducation' using Ordinal Encoding
+    df['ParentalEducation'] = ordinal_encoder_Parent.fit_transform(df[['ParentalEducation']]) ## these are ordinal so we dont split them up because their order matters 
+
+    # Fit and transform 'ParentalSupport' using Ordinal Encoding
+    df['ParentalSupport'] = ordinal_encoder_ParentalSup.fit_transform(df[['ParentalSupport']])
+    return df
+
 def predict_grade(n_clicks, age, gender, ethnicity, parental_education, study_time, absences, tutoring, parental_support, extracurricular, sports, music, volunteering, gpa):
     if n_clicks == 0:
         return ""
@@ -120,7 +150,7 @@ def predict_grade(n_clicks, age, gender, ethnicity, parental_education, study_ti
     })
 
   
-    prediction = model.predict(input_data)[0]  # Get the single prediction
+    prediction = model.predict(featureEng(input_data))[0]  # Get the single prediction
 
     
     grade_mapping = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'F'}
