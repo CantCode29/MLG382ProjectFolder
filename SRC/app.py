@@ -128,12 +128,31 @@ def featureEng(input_df):
         return None
 
 # Initialize Dash app
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, title="Bright Academy Student Grade Prediction")
 server = app.server
 
-# Define the layout with a two-column structure
+# Define the layout with a two-column structure and detailed explanation
 app.layout = html.Div(className='container', children=[
     html.H1("Bright Academy Student Grade Prediction", className='title'),
+
+    # Detailed Explanation paragraph with bullet points
+    html.Div(className='explanation-text', children=[
+        html.P(
+            """
+            This dashboard utilizes a predictive model to estimate a student's Grade Class at Bright Academy.
+            The Grade Class represents the student's academic performance level (A, B, C, D, or F).
+            Please note that Grade Point Average (GPA) is excluded from the prediction features as it is the numerical basis from which the Grade Class is derived.
+            """
+        ),
+        html.P("The model's prediction is based on a range of student characteristics and behaviors, including:"),
+        html.Ul([
+            html.Li("Demographic details: Age, Gender (Male/Female), and Ethnicity (Caucasian, African American, Asian, Other)."),
+            html.Li("Parental Information: Parental Education level (None to Higher Study) and the level of Parental Support (None to Very High)."),
+            html.Li("Study Habits: Weekly Study Time, number of Absences during the school year, and participation in Tutoring (Yes/No)."),
+            html.Li("Extracurricular Activities: Participation in Extracurricular activities overall (Yes/No), specifically including Sports (Yes/No), Music (Yes/No), and Volunteering (Yes/No).")
+        ]),
+         html.P("By inputting these details, users can receive a predicted Grade Class score.")
+    ]), # End of explanation-text
 
     html.Div(className='content-wrapper', children=[ # Wrapper for the two columns
         # Left Column: Graph and Summary
@@ -216,15 +235,15 @@ app.layout = html.Div(className='container', children=[
                 ]),
                 html.Div(className='input-group', children=[
                     html.Label("GPA", className='label'),
-                    dcc.Input(id='gpa-input', type='number', value=3.0, min=0.0, max=4.0, className='input-field'),
+                    dcc.Input(id='gpa-input', type='number', value=3.0, min=2.0, max=4.0, className='input-field'),
                 ]),
-            ]), 
+            ]), # End of input-section
 
             html.Button('Predict Grade', id='predict-button', n_clicks=0, className='predict-button'),
 
             html.Div(id='prediction-output', className='output-section')
-        ])
-    ]) 
+        ]) # End of right-column
+    ]) # End of content-wrapper
 ])
 
 @app.callback(
