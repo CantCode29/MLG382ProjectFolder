@@ -216,15 +216,15 @@ app.layout = html.Div(className='container', children=[
                 ]),
                 html.Div(className='input-group', children=[
                     html.Label("GPA", className='label'),
-                    dcc.Input(id='gpa-input', type='number', value=3.0, min=2.0, max=4.0, className='input-field'),
+                    dcc.Input(id='gpa-input', type='number', value=3.0, min=0.0, max=4.0, className='input-field'),
                 ]),
-            ]), # End of input-section
+            ]), 
 
             html.Button('Predict Grade', id='predict-button', n_clicks=0, className='predict-button'),
 
             html.Div(id='prediction-output', className='output-section')
-        ]) # End of right-column
-    ]) # End of content-wrapper
+        ])
+    ]) 
 ])
 
 @app.callback(
