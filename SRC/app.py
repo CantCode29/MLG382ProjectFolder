@@ -124,7 +124,7 @@ def featureEng(input_df):
         return None
 
 
-app = dash.Dash(__name__, title="Bright Academy Student Grade Prediction")
+app = dash.Dash(__name__, title="Bright Path Academy Student Grade Prediction")
 server = app.server
 
 
