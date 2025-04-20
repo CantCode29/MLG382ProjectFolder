@@ -170,8 +170,8 @@ app.layout = html.Div(className='container', children=[
                 
                 html.A(
                     "For more information, please click here to download the full report.", 
-                    href='/assets/bright_academy_report.pdf', 
-                    download='bright_academy_report.pdf', 
+                    href='/assets/brightpath_academy_report.pdf', 
+                    download='brightpath_academy_report.pdf', 
                     className='download-link' 
                 )
             ])
