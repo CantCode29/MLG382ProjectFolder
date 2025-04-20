@@ -129,7 +129,7 @@ server = app.server
 
 
 app.layout = html.Div(className='container', children=[
-    html.H1("Bright Academy Student Grade Prediction", className='title'),
+    html.H1("Bright Path Academy Student Grade Prediction", className='title'),
 
     
     html.Div(className='explanation-text', children=[
