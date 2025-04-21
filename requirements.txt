@@ -50,3 +50,5 @@ gunicorn
 dash-bootstrap-components
 gevent
 opencv-python
+tensorflow
+plotly
