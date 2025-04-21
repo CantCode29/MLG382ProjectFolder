@@ -49,3 +49,4 @@ dash==2.17.0
 gunicorn
 dash-bootstrap-components
 gevent
+opencv-python
