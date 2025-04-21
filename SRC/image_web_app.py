@@ -1,12 +1,13 @@
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
-import plotly.express as px
 import tensorflow as tf
 import numpy as np
 import cv2
 import base64
-import os
+
 
 # Initialize the Dash app
 app = dash.Dash(__name__)
