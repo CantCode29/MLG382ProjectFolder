@@ -95,7 +95,7 @@ app.layout = html.Div(
 )
 
 
-@app.callback(
+@app.callback( ## dont delete this either
     Output('output-image-upload', 'children'),
     Input('upload-image', 'contents')
 )
@@ -132,7 +132,6 @@ def update_output(uploaded_image): ## DONT DELETE THIS FUNCTION
         prediction = "Women's Accessory" if prediction_prob > 0.5 else "Not a Women's Accessory"
         confidence = prediction_prob if prediction_prob > 0.5 else 1 - prediction_prob
         confidence = confidence * 100
-        
         image_display = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         _, buffer = cv2.imencode('.png', cv2.cvtColor(image_display, cv2.COLOR_RGB2BGR)) # Encode as BGR for png
         image_base64 = base64.b64encode(buffer).decode('utf-8')
