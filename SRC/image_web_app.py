@@ -104,7 +104,7 @@ app.layout = html.Div([
                     '''
 <svg width="24" height="24" viewBox="0 0 24 24">
     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
-          stroke="black" stroke-width="2" fill="none"></path>
+        stroke="black" stroke-width="2" fill="none"></path>
 </svg>
                     ''',
                     dangerously_allow_html=True
@@ -115,7 +115,7 @@ app.layout = html.Div([
                     '''
 <svg width="24" height="24" viewBox="0 0 24 24">
     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"
-          stroke="currentColor" stroke-width="2" fill="none"></rect>
+        stroke="currentColor" stroke-width="2" fill="none"></rect>
 </svg>
                     ''',
                     dangerously_allow_html=True
@@ -132,18 +132,17 @@ app.layout = html.Div([
         html.A("VIEW ALL", href="#", className="view-all")
     ], className="nav-tabs"),
     html.Div([
-        # Product Card 1
         html.Div([
             html.Div([
                 html.Img(src="/assets/img1.jpg",
-                         alt="Originals Argyle Printed 1/4-Zip Sweatshirt"),
+                         alt="Product Image 1"),
                 html.Div([
                     dcc.Markdown(
                         '''
 <svg width="20" height="20" viewBox="0 0 24 24">
     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5
-             0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
-          stroke="black" stroke-width="2" fill="none"></path>
+            0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+        stroke="black" stroke-width="2" fill="none"></path>
 </svg>
                         ''',
                         dangerously_allow_html=True
@@ -157,21 +156,20 @@ app.layout = html.Div([
                 html.Div("Originals", className="product-category")
             ], className="product-info")
         ], className="product-card"),
-        # Product Card 2
         html.Div([
             html.Div([
                 html.Img(src="/assets/img2.jpg",
-                         alt="Originals Argyle Printed 1/4-Zip Sweatshirt"),
+                         alt="Product Image 2"),
                 html.Div([
                     dcc.Markdown(
-                        '''
+                         '''
 <svg width="20" height="20" viewBox="0 0 24 24">
     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5
-             0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
-          stroke="black" stroke-width="2" fill="none"></path>
+            0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+        stroke="black" stroke-width="2" fill="none"></path>
 </svg>
-                        ''',
-                        dangerously_allow_html=True
+                         ''',
+                         dangerously_allow_html=True
                     )
                 ], className="favorite"),
                 html.Div("$140", className="price")
@@ -182,21 +180,20 @@ app.layout = html.Div([
                 html.Div("Originals", className="product-category")
             ], className="product-info")
         ], className="product-card"),
-        # Product Card 3
         html.Div([
             html.Div([
                 html.Img(src="/assets/img3.jpg",
-                         alt="Originals Argyle Printed 1/4-Zip Sweatshirt"),
+                         alt="Product Image 3"),
                 html.Div([
                     dcc.Markdown(
                         '''
 <svg width="20" height="20" viewBox="0 0 24 24">
     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5
-             0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
-          stroke="black" stroke-width="2" fill="none"></path>
+            0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+        stroke="black" stroke-width="2" fill="none"></path>
 </svg>
                         ''',
-                        dangerously_allow_html=True
+                         dangerously_allow_html=True
                     )
                 ], className="favorite"),
                 html.Div("$140", className="price")
@@ -207,18 +204,17 @@ app.layout = html.Div([
                 html.Div("Originals", className="product-category")
             ], className="product-info")
         ], className="product-card"),
-        # Product Card 4
         html.Div([
-            html.Div([
+             html.Div([
                 html.Img(src="/assets/img4.jpg",
-                         alt="Originals Argyle Printed 1/4-Zip Sweatshirt"),
+                         alt="Product Image 4"),
                 html.Div([
                     dcc.Markdown(
                         '''
 <svg width="20" height="20" viewBox="0 0 24 24">
     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5
-             0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
-          stroke="black" stroke-width="2" fill="none"></path>
+            0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+        stroke="black" stroke-width="2" fill="none"></path>
 </svg>
                         ''',
                         dangerously_allow_html=True
@@ -232,29 +228,126 @@ app.layout = html.Div([
                 html.Div("Originals", className="product-category")
             ], className="product-info")
         ], className="product-card"),
+        html.Div([
+            html.Div([
+                html.Img(src="/assets/img1.jpg",
+                         alt="Product Image 5"),
+                html.Div([
+                    dcc.Markdown(
+                        '''
+<svg width="20" height="20" viewBox="0 0 24 24">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5
+            0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+        stroke="black" stroke-width="2" fill="none"></path>
+</svg>
+                        ''',
+                        dangerously_allow_html=True
+                    )
+                ], className="favorite"),
+                html.Div("$140", className="price")
+            ], className="product-image"),
+            html.Div([
+                html.Div("Desigual Urban Chic Cream Backpack with Contrast Stitching",
+                         className="product-title"),
+                html.Div("Originals", className="product-category")
+            ], className="product-info")
+        ], className="product-card"),
+        html.Div([
+            html.Div([
+                html.Img(src="/assets/img2.jpg",
+                         alt="Product Image 6"),
+                html.Div([
+                    dcc.Markdown(
+                         '''
+<svg width="20" height="20" viewBox="0 0 24 24">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5
+            0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+        stroke="black" stroke-width="2" fill="none"></path>
+</svg>
+                         ''',
+                         dangerously_allow_html=True
+                    )
+                ], className="favorite"),
+                html.Div("$140", className="price")
+            ], className="product-image"),
+            html.Div([
+                html.Div("Luxury Braided Black Shoulder Bag with Gold Accent Chain",
+                         className="product-title"),
+                html.Div("Originals", className="product-category")
+            ], className="product-info")
+        ], className="product-card"),
+        html.Div([
+            html.Div([
+                html.Img(src="/assets/img3.jpg",
+                         alt="Product Image 7"),
+                html.Div([
+                    dcc.Markdown(
+                        '''
+<svg width="20" height="20" viewBox="0 0 24 24">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5
+            0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+        stroke="black" stroke-width="2" fill="none"></path>
+</svg>
+                        ''',
+                         dangerously_allow_html=True
+                    )
+                ], className="favorite"),
+                html.Div("$140", className="price")
+            ], className="product-image"),
+            html.Div([
+                html.Div("Elegant Brown Monogram Tote Bag with Leather Trim by BAGCO",
+                         className="product-title"),
+                html.Div("Originals", className="product-category")
+            ], className="product-info")
+        ], className="product-card"),
+        html.Div([
+             html.Div([
+                html.Img(src="/assets/img4.jpg",
+                         alt="Product Image 8"),
+                html.Div([
+                    dcc.Markdown(
+                        '''
+<svg width="20" height="20" viewBox="0 0 24 24">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5
+            0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+        stroke="black" stroke-width="2" fill="none"></path>
+</svg>
+                        ''',
+                        dangerously_allow_html=True
+                    )
+                ], className="favorite"),
+                html.Div("$140", className="price")
+            ], className="product-image"),
+            html.Div([
+                html.Div("Chunky Knit Winter Beanie with Faux Fur Pom – Light Grey",
+                         className="product-title"),
+                html.Div("Originals", className="product-category")
+            ], className="product-info")
+        ], className="product-card"),
+
         html.Div([], className="divider")
     ], className="product-grid"),
+
     html.Div(
         style={
             'textAlign': 'center',
             'padding': '20px',
-            'minHeight': '100vh',
             'display': 'flex',
             'flexDirection': 'column',
             'alignItems': 'center',
             'justifyContent': 'center',
+            'marginTop': '40px'
         },
         children=[
             html.H1(
                 "Become a Seller",
-                style={'marginBottom': '20`px'}
+                style={'marginBottom': '20px'}
             ),
             html.P(
                 "Upload an image to predict if it's a women's accessory (e.g., jewelry, handbags) or not.",
                 style={'color': '#555', 'marginBottom': '20px', 'fontSize': '18px'}
             ),
 
-    \
             dcc.Upload(
                 id='upload-image',
                 children=html.Button(
@@ -275,7 +368,6 @@ app.layout = html.Div([
                 style={'marginBottom': '30px'}
             ),
 
-            # Div to display the uploaded image and prediction
             html.Div(id='output-image-upload', style={'marginTop': '20px'}),
         ])
 ])
