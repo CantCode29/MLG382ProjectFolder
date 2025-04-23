@@ -192,10 +192,26 @@ header {
 }
 
 #app-container {
+    align-self: center;
     max-width: 1400px; /* Adjust this width as needed */
     margin-left: auto;
     margin-right: auto;
     padding-left: auto;  
     padding-right: auto; 
     box-sizing: border-box; 
+}
+
+.download-link {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.download-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
 }

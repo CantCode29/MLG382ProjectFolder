@@ -369,7 +369,13 @@ app.layout = html.Div(id='app-container',children=[
             ),
 
             html.Div(id='output-image-upload', style={'marginTop': '20px'}),
-        ])
+        ]),
+        html.A(
+                    "For more information, please click here to download the full report.", 
+                    href='/assets/Project-2 Report -Final.pdf', 
+                    download='Project-2 Report -Final.pdf', 
+                    className='download-link' 
+                )
 ])
 
 
