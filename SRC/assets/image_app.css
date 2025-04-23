@@ -190,3 +190,12 @@ header {
     margin: 40px 0;
     width: 95%;
 }
+
+#app-container {
+    max-width: 1400px; /* Adjust this width as needed */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: auto;  
+    padding-right: auto; 
+    box-sizing: border-box; 
+}

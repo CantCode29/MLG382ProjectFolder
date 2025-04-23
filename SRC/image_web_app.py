@@ -48,7 +48,7 @@ def load_and_process_images(image_array):  # DONT DELETE THIS FUNCTION
         return None, None
 
 
-app.layout = html.Div([
+app.layout = html.Div(id='app-container',children=[
     html.Header([
         html.Div([
             dcc.Markdown(
